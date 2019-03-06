@@ -119,6 +119,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="thread_control\thread_control.cpp" />
+    <ClCompile Include="thread_map\thread_map.cpp" />
+    <ClCompile Include="thread_tcp1\thread_tcp1.cpp" />
+    <ClCompile Include="thread_tcp2\thread_tcp2.cpp" />
+    <ClCompile Include="thread_video_display\thread_video_display.cpp" />
+    <ClCompile Include="thread_window_parameter\thread_window_parameter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="data\data_controls.h" />
+    <ClInclude Include="data\data_telemetry.h" />
+    <ClInclude Include="data\data_video.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="thread_control\thread_control.h" />
+    <ClInclude Include="thread_map\thread_map.h" />
+    <ClInclude Include="thread_tcp1\thread_tcp1.h" />
+    <ClInclude Include="thread_tcp2\thread_tcp2.h" />
+    <ClInclude Include="thread_video_display\thread_video_display.h" />
+    <ClInclude Include="thread_window_parameter\thread_window_parameter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
