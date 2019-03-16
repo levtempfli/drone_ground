@@ -167,7 +167,22 @@ int tcp_utility::getiptable(std::vector<std::string> &ips) {
 //Get ip adress from hostname
 //Returns:0 - If no error occurs, otherwise returns the error code
 int tcp_utility::getipaddr(const char *addr, std::vector<std::string> &ips) {
-	struct addrinfo hints; //criterias for selectiong the socket adress structures
+
+	struct in_addr addri = { 0, };
+	struct hostent * res;
+	int i = 0;
+
+	res = gethostbyname(addr);
+	if(res!=NULL)
+	while (res->h_addr_list[i] != 0)
+	{
+		char hstr[INET_ADDRSTRLEN];
+		addri.s_addr = *(u_long *)res->h_addr_list[i++];
+		inet_ntop(AF_INET, &addri, hstr, INET_ADDRSTRLEN);
+		ips.push_back(std::string(hstr));
+	}
+
+	/*struct addrinfo hints; //criterias for selectiong the socket adress structures
 	struct addrinfo *infoptr = NULL; //Adress informations
 	memset(&hints, 0, sizeof(hints));//Fill the "hints" with 0
 	hints.ai_family = AF_INET; // AF_INET means only IPv4 addresses
@@ -186,6 +201,14 @@ int tcp_utility::getipaddr(const char *addr, std::vector<std::string> &ips) {
 
 	}
 
-	freeaddrinfo(infoptr);//free the memory
+	freeaddrinfo(infoptr);//free the memory*/
 	return 0;
+}
+
+//Terminates use of the Winsock 2 DLL
+//Returns:0 - If no error occurs, otherwise returns the error code
+int tcp_utility::closewinsock() {
+	int r = WSACleanup();
+	if (r == SOCKET_ERROR) return WSAGetLastError();
+	else return 0;
 }

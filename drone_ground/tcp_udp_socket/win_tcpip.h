@@ -1,5 +1,6 @@
 ﻿#ifndef TCPIP_H
 #define TCPIP_H
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 #include <Windows.h>
@@ -8,6 +9,8 @@
 
 #pragma comment(lib, "Ws2_32.lib")
 #pragma comment(lib, "iphlpapi.lib")
+
+
 
 //TCP socket class
 class tcp_socket {
@@ -93,6 +96,10 @@ public:
 	//Get ip adress from hostname
 	//Returns:0 - If no error occurs, otherwise returns the error code
 	int getipaddr(const char *addr, std::vector<std::string> &ips);
+
+	//Terminates use of the Winsock 2 DLL
+	//Returns:0 - If no error occurs, otherwise returns the error code
+	int closewinsock();
 };
 
 
