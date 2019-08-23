@@ -4,7 +4,8 @@
 #include "../globals.h"
 
 class thread_window_parameter {
-	DWORD WINAPI main(void *);
+public:
+	static DWORD WINAPI main(LPVOID lpParameter);
 };
 
 #endif // !THREAD_WINDOW_PARAMETER

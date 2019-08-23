@@ -1,8 +1,8 @@
 #ifndef DATA_CONTROLS_H
 #define DATA_CONTROLS_H
 
-class data_controls {
-
+struct data_controls {
+	HANDLE mutex;
 };
 #endif // !DATA_CONTROLS_H
 

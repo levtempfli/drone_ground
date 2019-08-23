@@ -1,9 +1,2 @@
-﻿  main.cpp
-  thread_control.cpp
-  thread_map.cpp
-  thread_tcp1.cpp
-  thread_tcp2.cpp
-  thread_video_display.cpp
-  thread_window_parameter.cpp
-  Generating Code...
+﻿  thread_tcp1.cpp
   drone_ground.vcxproj -> C:\Users\LEEVII\Desktop\drone_ground\Debug\drone_ground.exe

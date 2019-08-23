@@ -3,7 +3,8 @@
 #include <Windows.h>
 #include "../globals.h"
 class thread_tcp2 {
-	DWORD WINAPI main(void *);
+public:
+	static DWORD WINAPI main(LPVOID lpParameter);
 };
 
 #endif // !THREAD_TCP2_H

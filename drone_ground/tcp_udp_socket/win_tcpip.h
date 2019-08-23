@@ -88,18 +88,18 @@ class tcp_utility {
 public:
 	//Initializes winsock
 	//Returns:0 - If no error occurs, otherwise returns the error code
-	int initwinsock();
+	static int initwinsock();
 	//Lists the available network ip addresses
 	//Returns:0 - If no error occurs, otherwise returns the error code
-	int getiptable(std::vector<std::string> &ips);
+	static int getiptable(std::vector<std::string> &ips);
 
 	//Get ip adress from hostname
 	//Returns:0 - If no error occurs, otherwise returns the error code
-	int getipaddr(const char *addr, std::vector<std::string> &ips);
+	static int getipaddr(const char *addr, std::vector<std::string> &ips);
 
 	//Terminates use of the Winsock 2 DLL
 	//Returns:0 - If no error occurs, otherwise returns the error code
-	int closewinsock();
+	static int closewinsock();
 };
 
 

@@ -4,14 +4,14 @@
 #include "data/data_controls.h"
 #include "data/data_telemetry.h"
 #include "data/data_video.h"
+#include "data/data_network.h"
 
-extern HANDLE _data_telemetry_mtx;
-extern HANDLE _data_video_mtx;
-extern HANDLE _data_controls_mtx;
+#include <iostream>
 
 extern data_controls _dt_controls;
 extern data_telemetry _dt_telemetry;
 extern data_video _dt_video;
+extern data_network _dt_network;
 
 
 #endif // !GLOBALS_H
