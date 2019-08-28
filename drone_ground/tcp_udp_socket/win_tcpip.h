@@ -35,7 +35,7 @@ public:
 	int socketlasterror();
 
 	//Disconnects
-	//Returns:0 - If no error occurs, otherwise returns the error code, 10057 - Socket is not connected
+	//Returns:0 - If no error occurs, otherwise returns the error code
 	int disconnect();
 
 	//Closes the socket

@@ -31,12 +31,13 @@ int tcp_socket::socketlasterror() {
 }
 
 //Disconnects
-//Returns:0 - If no error occurs, otherwise returns the error code, 10057 - Socket is not connected
+//Returns:0 - If no error occurs, otherwise returns the error code
 int tcp_socket::disconnect() {
 	int r = closesck();
 	if (r != 0) return r;
 	r = makesocket();
 	if (r != 0) return r;
+	return 0;
 	/*int r = shutdown(sck, SD_BOTH);
 	if (r == SOCKET_ERROR) return WSAGetLastError();*/
 }
