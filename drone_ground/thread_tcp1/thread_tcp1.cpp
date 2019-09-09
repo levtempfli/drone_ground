@@ -180,8 +180,6 @@ int thread_tcp1::encode_message() {
 		return len + 1;
 	}
 	else return 0;
-
-	return 6;
 }
 
 void thread_tcp1::solve_message(int len, bool correct) {
