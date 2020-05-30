@@ -1,3 +1,0 @@
-﻿  thread_tcp1.cpp
-c:\users\leevii\desktop\drone\drone_repo\drone_ground\drone_ground\thread_tcp1\thread_tcp1.cpp(209): warning C4715: 'thread_tcp1::create_message': not all control paths return a value
-  drone_ground.vcxproj -> C:\Users\LEEVII\Desktop\Drone\drone_repo\drone_ground\Debug\drone_ground.exe
