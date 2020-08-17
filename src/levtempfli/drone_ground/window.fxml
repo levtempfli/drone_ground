@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="levtempfli.drone_ground.Controller">
+   <children>
+      <Pane layoutX="320.0" layoutY="624.0" prefHeight="181.0" prefWidth="312.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="968.0" />
+      <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="180.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="489.0" layoutY="239.0" prefHeight="188.0" prefWidth="282.0" text="Video" textFill="#c6ff00">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ScrollPane prefHeight="900.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1280.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="897.0" prefWidth="317.0">
+               <children>
+                  <AnchorPane prefHeight="24.0" prefWidth="320.0" AnchorPane.bottomAnchor="873.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Telemetry Data:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="24.0" prefHeight="24.0" prefWidth="320.0" AnchorPane.bottomAnchor="849.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Pressure:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_press" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 Psi" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="48.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Temperature:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_temp" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 C°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="72.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="Barometric Altitute:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="label_baro_alt" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 m" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="96.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="GPS Latitude:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_lat" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="120.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="GPS Longitude:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_lon" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="144.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="GPS Altitude:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_alt" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 m" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="168.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="160.0" text="GPS Fix:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_fix" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="192.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="1.0" prefHeight="24.0" prefWidth="160.0" text="GPS speed:" textAlignment="CENTER" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                        <Label fx:id="label_GPS_speed" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 km/h" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="216.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="GPS satellites:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_sats" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="240.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="PDOP:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_PDOP" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="264.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="Home point Latitude:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="label_home_lat" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="288.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="1.0" prefHeight="24.0" prefWidth="160.0" text="Home point Longitude:" textAlignment="CENTER" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                        <Label fx:id="label_home_lon" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="312.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="GPS Latitude Set:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_lat_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="336.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="GPS Longitude Set:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_GPS_lon_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="360.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="Altitude set:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="label_alt_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 m" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="384.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="IMU-X set:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_IMUX_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="408.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="IMU-Y set:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_IMUY_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="432.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="IMU-Z set:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_IMUZ_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="456.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="IMU-X:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="label_IMUX" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="480.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="IMU-Y:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_IMUY" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="504.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="IMU-Z:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_IMUZ" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0°" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="528.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Voltage:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_volt" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 V" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="552.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="Current:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="label_curr" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 A" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="576.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Estimated Battery %:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_est_bat" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 %" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="600.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Estimated Remaining:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_est_rem" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 min" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="624.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Flight Mode:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_mode" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="1-Standing" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="648.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="Sonar Distance:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                        <Label fx:id="label_sonar_dist" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 cm" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="672.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="I2C errors:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_I2C_err" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="696.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Timer errors:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_timer_err" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="720.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="322.0" text="Control Data:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="744.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Mode Set:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_mode_set" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="1-Standing" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="768.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Control X:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_control_x" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="792.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Control Y:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_control_y" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="816.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Control Zr:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_control_zr" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="840.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Control A:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_control_a" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="1" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="864.0" prefHeight="24.0" prefWidth="320.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Control S:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_control_s" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="1" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="632.0" layoutY="719.0" prefHeight="181.0" prefWidth="292.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="641.0">
+         <children>
+            <AnchorPane layoutY="14.0" prefHeight="24.0" prefWidth="320.0">
+               <children>
+                  <TextField fx:id="textfield_ip" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="218.0" mnemonicParsing="false" text="Set New" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="7.0" layoutY="48.0" prefHeight="24.0" prefWidth="320.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Selected IP:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label fx:id="label_ip" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0.0.0.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="4.0" layoutY="72.0" prefHeight="24.0" prefWidth="320.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="Connected:" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <CheckBox fx:id="checkbox_connected" layoutX="160.0" layoutY="3.0" mnemonicParsing="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="959.0" layoutY="719.0" prefHeight="181.0" prefWidth="292.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="314.0">
+         <children>
+            <Label layoutX="57.0" layoutY="14.0" prefHeight="24.0" prefWidth="200.0" text="Debug Informations:" />
+            <AnchorPane layoutX="-3.0" layoutY="38.0" prefHeight="24.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <TextField fx:id="textfield_debug" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="218.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="Send" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <TextArea fx:id="textarea_debug" editable="false" layoutX="-3.0" layoutY="64.0" prefHeight="102.0" prefWidth="305.0" AnchorPane.leftAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="1288.0" layoutY="734.0" prefHeight="151.0" prefWidth="305.0" text="Controls:&#10;W,A,S,D - Forward, Backw., Left, Right Move&#10;Q,E - Left, Right Rotation&#10;Shift, Control - Increase, Decrease Altitude&#10;F, R - Increase, Decrease Speed&#10;Modes: 1-Standing, 2-Manual, 3-GPS Hold, 4- Go to Home, 5-Landing" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="7.0" />
+      <Separator layoutX="1274.0" layoutY="730.0" orientation="VERTICAL" prefHeight="168.0" prefWidth="18.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="308.0" />
+   </children>
+</AnchorPane>
