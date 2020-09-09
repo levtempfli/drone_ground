@@ -9,9 +9,9 @@ public class ThreadTCPComm implements Runnable {
     private final int drone_port = 325;
 
     private final long mainloop_wait = 50;
-    private final long connloop_wait = 10;
+    private final long connloop_wait = 20;
     private final int conn_msg_timeout = 5000;
-    private final int msg_send_period = 100;
+    private final int msg_send_period = 125;
     private final int in_buffer_size = 64000;
     private final int out_buffer_size = 256;
     private final int slv_buffer_size = 4098;
