@@ -35,7 +35,7 @@ public class Main extends Application {
             tcp_com_thread.setDaemon(true);
             tcp_com_thread.start();
 
-            Thread param_update_thread = new Thread(new ThreadParamUpdate());
+            Thread param_update_thread = new Thread(new ThreadParamUpdate(controller, drone_data));
             param_update_thread.setDaemon(true);
             param_update_thread.start();
 
