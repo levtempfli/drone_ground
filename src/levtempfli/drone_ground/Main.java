@@ -13,12 +13,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("window.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("window.fxml"));
+            Parent root = fxmlLoader.load();
             primaryStage.setTitle("Drone Ground Station");
             primaryStage.setScene(new Scene(root, 1600, 900));
             primaryStage.show();
 
             Data drone_data = new Data();
+            Controller controller = fxmlLoader.getController();
+            controller.init();
 
             Thread map_thread = new Thread(new ThreadMap());
             map_thread.setDaemon(true);

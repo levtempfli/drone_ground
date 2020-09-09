@@ -339,6 +339,10 @@ public class Data {
             control_a = (short) (control_a / this.control_s * control_s);
             this.control_s = control_s;
         }
+
+        public synchronized short getControl_s() {
+            return control_s;
+        }
     }
 
     public class Debug {

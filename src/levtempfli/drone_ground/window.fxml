@@ -195,7 +195,7 @@
                   <AnchorPane layoutY="648.0" prefHeight="24.0" prefWidth="320.0">
                      <children>
                         <Label layoutY="-1.0" prefHeight="24.0" prefWidth="160.0" text="Sonar Distance:" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0" />
-                        <Label fx:id="label_sonar_dist" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 cm" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="label_sonar_state" layoutX="125.0" layoutY="92.0" prefHeight="24.0" prefWidth="160.0" text="0 cm" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutY="672.0" prefHeight="24.0" prefWidth="320.0">

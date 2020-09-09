@@ -32,7 +32,7 @@ public class Controller {
     public Label label_est_bat = null;
     public Label label_est_rem = null;
     public Label label_mode = null;
-    public Label label_sonar_dist = null;
+    public Label label_sonar_state = null;
     public Label label_I2C_err = null;
     public Label label_timer_err = null;
     public Label label_mode_set = null;
@@ -48,4 +48,8 @@ public class Controller {
 
     public TextField textfield_debug = null;
     public TextArea textarea_debug = null;
+
+    public void init(){
+        checkbox_connected.setDisable(true);
+    }
 }
