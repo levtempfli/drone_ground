@@ -1,10 +1,5 @@
 package levtempfli.drone_ground;
 
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
 public class Data {
     private String drone_ip = "172.27.125.242";
     private boolean connected = false;
@@ -25,7 +20,7 @@ public class Data {
         this.connected = connected;
     }
 
-    public static class Incoming {
+    public class Incoming {
         private int pressure = 0;
         private double temperature = 0;
         private double baro_alti = 0;
@@ -52,7 +47,7 @@ public class Data {
         private double est_bat = 0;
         private double est_rem = 0;
         private short mode = 1;
-        private double sonar_dist = 0;
+        private boolean sonar_state = false;
         private long I2C_err = 0;
         private long timer_err = 0;
 
@@ -264,12 +259,12 @@ public class Data {
             this.mode = mode;
         }
 
-        public synchronized double getSonar_dist() {
-            return sonar_dist;
+        public synchronized boolean getSonar_state() {
+            return sonar_state;
         }
 
-        public synchronized void setSonar_dist(double sonar_dist) {
-            this.sonar_dist = sonar_dist;
+        public synchronized void setSonar_state(boolean sonar_state) {
+            this.sonar_state = sonar_state;
         }
 
         public synchronized long getI2C_err() {
@@ -289,13 +284,13 @@ public class Data {
         }
     }
 
-    public static class Outgoing {
+    public class Outgoing {
         private short mode_set = 1;
         private short control_x = 0;
         private short control_y = 0;
         private short control_zr = 0;
         private short control_a = 0;
-        private short control_s = 0;
+        private short control_s = 1;
 
         public synchronized short getMode_set() {
             return mode_set;
@@ -310,7 +305,7 @@ public class Data {
         }
 
         public synchronized void setControl_x(short control_x) {
-            this.control_x = control_x;
+            this.control_x = (short) (control_x * control_s);
         }
 
         public synchronized short getControl_y() {
@@ -318,7 +313,7 @@ public class Data {
         }
 
         public synchronized void setControl_y(short control_y) {
-            this.control_y = control_y;
+            this.control_y = (short) (control_y * control_s);
         }
 
         public synchronized short getControl_zr() {
@@ -326,7 +321,7 @@ public class Data {
         }
 
         public synchronized void setControl_zr(short control_zr) {
-            this.control_zr = control_zr;
+            this.control_zr = (short) (control_zr * control_s);
         }
 
         public synchronized short getControl_a() {
@@ -334,19 +329,19 @@ public class Data {
         }
 
         public synchronized void setControl_a(short control_a) {
-            this.control_a = control_a;
-        }
-
-        public synchronized short getControl_s() {
-            return control_s;
+            this.control_a = (short) (control_a * control_s);
         }
 
         public synchronized void setControl_s(short control_s) {
+            control_x = (short) (control_x / this.control_s * control_s);
+            control_y = (short) (control_y / this.control_s * control_s);
+            control_zr = (short) (control_zr / this.control_s * control_s);
+            control_a = (short) (control_a / this.control_s * control_s);
             this.control_s = control_s;
         }
     }
 
-    public static class Debug {
+    public class Debug {
         private String debug_line_out = "";
         private String debug_in = "";
 
@@ -372,5 +367,9 @@ public class Data {
             debug_in = "";
         }
     }
+
+    public Incoming incoming = new Incoming();
+    public Outgoing outgoing = new Outgoing();
+    public Debug debug = new Debug();
 
 }
