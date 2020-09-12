@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,14 +14,20 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+            Data drone_data = new Data();
+            Controller controller = new Controller(drone_data);
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("window.fxml"));
+            fxmlLoader.setController(controller);
             Parent root = fxmlLoader.load();
+
+            Scene scene = new Scene(root, 1600, 900);
+            scene.addEventHandler(KeyEvent.ANY, controller.keyboardEventHandler);
+
             primaryStage.setTitle("Drone Ground Station");
-            primaryStage.setScene(new Scene(root, 1600, 900));
+            primaryStage.setScene(scene);
             primaryStage.show();
 
-            Data drone_data = new Data();
-            Controller controller = fxmlLoader.getController();
             controller.init();
 
             Thread map_thread = new Thread(new ThreadMap());

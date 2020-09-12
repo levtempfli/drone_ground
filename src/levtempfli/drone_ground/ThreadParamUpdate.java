@@ -9,6 +9,10 @@ public class ThreadParamUpdate implements Runnable {
     private Controller controller;
     private Data drone_data;
 
+    private Timer mode_diff_timer = new Timer();
+    private final long max_mode_diff_time = 2000;
+    private boolean mode_diff = false;
+
     public ThreadParamUpdate(Controller controller, Data drone_data) {
         this.controller = controller;
         this.drone_data = drone_data;
@@ -16,6 +20,7 @@ public class ThreadParamUpdate implements Runnable {
 
     public void run() {
         while (true) {
+            mode_diff_handler();
             update_misc();
             update_incoming();
             update_outgoing();
@@ -26,6 +31,16 @@ public class ThreadParamUpdate implements Runnable {
                 System.out.println("Thread.sleep failed: " + e.toString());
             }
         }
+    }
+
+    private void mode_diff_handler() {
+        if (drone_data.outgoing.getMode_set() != drone_data.incoming.getMode()) {
+            if (!mode_diff) {
+                mode_diff_timer.StartCounter();
+                mode_diff = true;
+            }
+            else if(mode_diff_timer.GetCounter()>max_mode_diff_time) drone_data.outgoing.setMode_set(drone_data.incoming.getMode());
+        } else mode_diff = false;
     }
 
     private void update_misc() {
